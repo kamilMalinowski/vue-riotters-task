@@ -1,10 +1,40 @@
-<script setup></script>
+<script>
+import TheHeader from "./components/layout/TheHeader.vue";
+import SectionBalance from "./components/layout/SectionBalance.vue";
+import SectionSummary from "./components/layout/SectionSummary.vue";
+import SectionTabs from "./components/layout/SectionTabs.vue";
+
+export default {
+  components: {
+    "the-header": TheHeader,
+    "section-balance": SectionBalance,
+    "section-summary": SectionSummary,
+    "section-tabs": SectionTabs,
+  },
+};
+</script>
 
 <template>
-  <div class="dashboard"></div>
+  <div class="dashboard">
+    <!-- sitebar -->
+    <div class="dashboard__wrapper">
+      <the-header></the-header>
+      <div class="dashboard__sections">
+        <base-card class="grid--1 round-regular">
+          <section-balance></section-balance>
+        </base-card>
+        <base-card class="grid--2 round-regular">
+          <section-summary></section-summary>
+        </base-card>
+        <base-card class="grid--3 round-regular">
+          <section-tabs></section-tabs>
+        </base-card>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style>
+<style lang="scss">
 @font-face {
   font-family: "SF Pro Display Regular";
   src: url("./SFPRODISPLAYREGULAR.OTF") format("opentype");
@@ -73,11 +103,28 @@ body {
 }
 
 .dashboard {
-  background-color: var(--c-light);
+  background-color: var(--c-light-gray-bg); //temporary
   max-width: 144rem;
-  width: 100%;
   height: 90rem;
   border-radius: var(--round-large);
   margin: 0 auto;
+  overflow: hidden;
+  &__wrapper{
+    max-width: 117.6rem;
+    height: 100%;
+    background-color: var(--c-light);
+    margin: 0 0 0 auto;
+    padding: 4.9rem 6.8rem 0;
+  }
+  &__sections{
+    display: grid;
+    grid-gap: 3.2rem;
+    grid-template-columns: 50.9rem 49.9rem;
+  }
+}
+
+.grid--3{
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
 }
 </style>
