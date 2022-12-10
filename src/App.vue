@@ -97,7 +97,7 @@ body {
   font-size: 1.6rem;
   background-color: var(--c-dark-gray-bg);
   color: var(--c-dark);
-  font-family: "SF Pro Display Regular";
+  font-family: var(--f-regular);
   position: relative;
   padding: 2rem;
 }
@@ -126,5 +126,64 @@ body {
 .grid--3{
   grid-row: 2 / 3;
   grid-column: 1 / 3;
+}
+
+// global
+button{
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &:hover{
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+}
+
+h1{
+  font-family: var(--f-medium);
+  font-size: 5.6rem;
+  line-height: 5.6rem;
+  font-weight: 500;
+  padding: 4.0rem 0 1.6rem;
+  span{
+    color: var(--c-gray);
+    font-family: var(--f-regular);
+    font-weight: 100;
+  }
+}
+
+h2{
+  font-family: var(--f-medium);
+  font-size: 2.0rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+}
+
+.base-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.icon-wrapper{
+    margin: 0 0 0 auto;
+}
+
+.btn{
+  font-family: inherit;
+  border-radius: var(--round-extra-small);
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  margin-right: 0.8rem;
+  &--primary{
+    border: 1px solid var(--c-primary);
+    background-color: var(--c-primary);
+    color: var(--c-light);
+  }
+  &--secondary{
+    border: 1px solid var(--c-light-gray-border);
+    background-color: var(--c-light);
+    color: var(--c-primary);
+  }
 }
 </style>

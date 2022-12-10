@@ -77,7 +77,6 @@ export default {
   &__btn {
     @include buttonsSize;
     position: relative;
-    cursor: pointer;
     display: grid;
     place-content: center;
   }
