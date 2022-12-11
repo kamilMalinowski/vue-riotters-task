@@ -1,11 +1,11 @@
 <template>
   <section class="balance">
-    <div class="base-wrapper">
+    <section class="base-wrapper">
       <h2>Current Balance</h2>
-      <div class="icon-wrapper">
+      <button class="btn-dots">
         <dots-icon></dots-icon>
-      </div>
-    </div>
+      </button>
+    </section>
     <h1><span>$</span>21 432.23</h1>
     <div class="base-wrapper balance__text-box">
       <div class="balance__arrow-wrapper">
@@ -20,12 +20,10 @@
   </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .balance {
-  width: 100%;
-  height: 33.6rem;
   padding: 3.2rem;
-  &__text-box{
+  &__text-box {
     padding-bottom: 7.2rem;
   }
   &__arrow-wrapper {

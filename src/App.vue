@@ -31,6 +31,7 @@ export default {
         </base-card>
       </div>
     </div>
+    <div class="dashboard__blur-box"></div>
   </div>
 </template>
 
@@ -51,8 +52,10 @@ export default {
 :root{
   /* color */
   --c-light: #FFFFFF;
+  --c-light-dot: #FAFAFA;
   --c-light-gray-bg:#F7F7F9;
   --c-light-gray-border:#EBEBF3;
+  --c-light-gray-border2:#EEEEEE;
   --c-light-gray:#D5D5D6;
   --c-gray:#9896A1;
   --c-dark-gray: #858585;
@@ -63,7 +66,7 @@ export default {
   --c-tertiary: #EA4D4D;
 
   --c-opacity: rgba(0, 0, 0, 0.48);
-  --gradient: background: linear-gradient(180deg, rgba(247, 247, 249, 0) 0%, #F7F7F9 100%);
+  --gradient: linear-gradient(180deg, rgba(247, 247, 249, 0) 0%, #F7F7F9 100%);
 
   /* border-radious */
   --round-large: 24px;
@@ -108,6 +111,7 @@ body {
   height: 90rem;
   border-radius: var(--round-large);
   margin: 0 auto;
+  position: relative;
   overflow: hidden;
   &__wrapper{
     max-width: 117.6rem;
@@ -121,6 +125,17 @@ body {
     grid-gap: 3.2rem;
     grid-template-columns: 50.9rem 49.9rem;
   }
+  &__blur-box{
+    position: absolute;
+    width: 100%;
+    max-width: 104rem;
+    height: 13.6rem;
+    background: var(--gradient);
+    bottom: 0;
+    // right: 8.8rem; //figma mistake?
+    right: 6.8rem; //better
+    z-index: 99;
+  }
 }
 
 .grid--3{
@@ -132,10 +147,6 @@ body {
 button{
   cursor: pointer;
   transition: all 0.2s linear;
-  &:hover{
-    opacity: 0.8;
-    transform: translateY(-2px);
-  }
 }
 
 h1{
@@ -163,8 +174,11 @@ h2{
   align-items: center;
 }
 
-.icon-wrapper{
+.btn-dots{
     margin: 0 0 0 auto;
+    border: none;
+    background-color: transparent;
+    display: flex;
 }
 
 .btn{
