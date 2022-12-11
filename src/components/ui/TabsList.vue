@@ -33,7 +33,7 @@
     color: var(--c-gray);
     position: relative;
     &--active {
-      font-family: var(--f-medium);
+      font-family: var(--f-semibold);
       font-weight: 500;
       color: var(--c-dark);
       &::after {

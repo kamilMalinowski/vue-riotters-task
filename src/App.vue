@@ -37,36 +37,40 @@ export default {
 
 <style lang="scss">
 @font-face {
+  font-family: "SF Pro Display Light";
+  src: url("./SFProDisplay-Light.ttf") format("truetype");
+}
+@font-face {
   font-family: "SF Pro Display Regular";
-  src: url("./SFPRODISPLAYREGULAR.OTF") format("opentype");
+  src: url("./SFProDisplay-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "SF Pro Display Medium";
-  src: url("./SFPRODISPLAYMEDIUM.OTF") format("opentype");
+  src: url("./SFProDisplay-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "SF Pro Display SemiBold";
-  src: url("./SFPRODISPLAYBOLD.OTF") format("opentype");
+  src: url("./SFProDisplay-Semibold.ttf") format("truetype");
 }
 
-:root{
+:root {
   /* color */
-  --c-light: #FFFFFF;
-  --c-light-dot: #FAFAFA;
-  --c-light-gray-bg:#F7F7F9;
-  --c-light-gray-border:#EBEBF3;
-  --c-light-gray-border2:#EEEEEE;
-  --c-light-gray:#D5D5D6;
-  --c-gray:#9896A1;
+  --c-light: #ffffff;
+  --c-light-dot: #fafafa;
+  --c-light-gray-bg: #f7f7f9;
+  --c-light-gray-border: #ebebf3;
+  --c-light-gray-border2: #eeeeee;
+  --c-light-gray: #d5d5d6;
+  --c-gray: #9896a1;
   --c-dark-gray: #858585;
-  --c-dark-gray-bg: #1E1E1E;
-  --c-dark: #0A041C;
-  --c-primary: #7445FB;
-  --c-secondary: #2DC78F;
-  --c-tertiary: #EA4D4D;
+  --c-dark-gray-bg: #1e1e1e;
+  --c-dark: #0a041c;
+  --c-primary: #7445fb;
+  --c-secondary: #2dc78f;
+  --c-tertiary: #ea4d4d;
 
   --c-opacity: rgba(0, 0, 0, 0.48);
-  --gradient: linear-gradient(180deg, rgba(247, 247, 249, 0) 0%, #F7F7F9 100%);
+  --gradient: linear-gradient(180deg, rgba(247, 247, 249, 0) 0%, #f7f7f9 100%);
 
   /* border-radious */
   --round-large: 24px;
@@ -75,6 +79,7 @@ export default {
   --round-extra-small: 4px;
 
   /* font */
+  --f-light: "SF Pro Display Light";
   --f-regular: "SF Pro Display Regular";
   --f-medium: "SF Pro Display Medium";
   --f-semibold: "SF Pro Display SemiBold";
@@ -113,19 +118,19 @@ body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  &__wrapper{
+  &__wrapper {
     max-width: 117.6rem;
     height: 100%;
     background-color: var(--c-light);
     margin: 0 0 0 auto;
     padding: 4.9rem 6.8rem 0;
   }
-  &__sections{
+  &__sections {
     display: grid;
     grid-gap: 3.2rem;
     grid-template-columns: 50.9rem 49.9rem;
   }
-  &__blur-box{
+  &__blur-box {
     position: absolute;
     width: 100%;
     max-width: 104rem;
@@ -138,63 +143,64 @@ body {
   }
 }
 
-.grid--3{
+.grid--3 {
   grid-row: 2 / 3;
   grid-column: 1 / 3;
 }
 
 // global
-button{
+button {
   cursor: pointer;
   transition: all 0.2s linear;
 }
 
-h1{
+h1 {
   font-family: var(--f-medium);
   font-size: 5.6rem;
   line-height: 5.6rem;
   font-weight: 500;
-  padding: 4.0rem 0 1.6rem;
-  span{
+  padding: 4rem 0 1.6rem;
+  span {
     color: var(--c-gray);
-    font-family: var(--f-regular);
-    font-weight: 100;
+    font-family: var(--f-light);
+    font-weight: 300;
   }
 }
 
-h2{
+h2 {
   font-family: var(--f-medium);
-  font-size: 2.0rem;
+  font-size: 2rem;
   line-height: 2.4rem;
   font-weight: 500;
 }
 
-.base-wrapper{
+.base-wrapper {
   display: flex;
   align-items: center;
 }
 
-.btn-dots{
-    margin: 0 0 0 auto;
-    border: none;
-    background-color: transparent;
-    display: flex;
+.btn-dots {
+  margin: 0 0 0 auto;
+  border: none;
+  background-color: transparent;
+  display: flex;
 }
 
-.btn{
-  font-family: inherit;
+.btn {
+  font-family: var(--f-semibold);
   border-radius: var(--round-extra-small);
   padding: 0.8rem 1.6rem;
+  font-style: normal;
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 2.4rem;
   margin-right: 0.8rem;
-  &--primary{
+  &--primary {
     border: 1px solid var(--c-primary);
     background-color: var(--c-primary);
     color: var(--c-light);
   }
-  &--secondary{
+  &--secondary {
     border: 1px solid var(--c-light-gray-border);
     background-color: var(--c-light);
     color: var(--c-primary);

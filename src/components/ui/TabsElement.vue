@@ -43,7 +43,7 @@
       <h4 class="el__title">Change</h4>
       <p class="el__text el__text--decrease">
         <b>- 2.11</b>
-        <arrow-small class="decrease"></arrow-small>
+        <arrow-small class="decrease mirror3"></arrow-small>
       </p>
     </div>
     <line-small-decrease class=""></line-small-decrease>
@@ -161,7 +161,7 @@ export default {
 <style lang="scss" scoped>
 .el {
   display: grid;
-  grid-template-columns: 4.8rem 13rem 16.7rem 17.4rem 1fr 11.8rem;
+  grid-template-columns: 4.8rem 13rem 16.7rem 17.4rem 1fr 12.2rem;
   grid-gap: 1.6rem;
   align-items: center;
   background-color: var(--c-light);
@@ -185,9 +185,11 @@ export default {
   &__text {
     display: flex;
     gap: 0.6rem;
-    font-weight: 600;
     font-size: 1.4rem;
     line-height: 1.4rem;
+    b{
+      font-weight: 600;
+    }
     &--increase {
       color: var(--c-secondary);
     }
@@ -215,10 +217,15 @@ export default {
   }
 }
 
-.mirror{
+.mirror {
   transform: scaleX(-100%);
 }
-.mirror2{
+
+.mirror2 {
   transform: rotate(-180deg);
+}
+
+.mirror3 {
+  transform: rotate(90deg);
 }
 </style>
