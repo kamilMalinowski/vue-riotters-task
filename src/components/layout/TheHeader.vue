@@ -83,6 +83,10 @@ export default {
     position: relative;
     display: grid;
     place-content: center;
+    transition: all 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
   &__info-dot {
     top: -1px;
@@ -98,6 +102,25 @@ export default {
   &__bell-icon {
     width: 2rem;
     height: 2rem;
+    transition: all 0.4s;
+    animation: ring 6s ease-in-out infinite alternate;
+    @keyframes ring {
+      0%{
+        transform: rotate(0);
+      }
+      97%{
+        transform: rotate(0);
+      }
+      98%{
+        transform: rotate(-4deg);
+      }
+      99%{
+        transform: rotate(4deg);
+      }
+      100%{
+        transform: rotate(10deg);
+      }
+    }
   }
   &__hamburger-icon {
     width: 1.4rem;

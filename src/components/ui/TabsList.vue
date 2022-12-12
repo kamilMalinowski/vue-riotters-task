@@ -33,10 +33,17 @@
     line-height: 2.4rem;
     color: var(--c-gray);
     position: relative;
+    transition: all 0.4s;
+    &:hover {
+      color: var(--c-dark);
+    }
     &--active {
       font-family: var(--f-semibold);
       font-weight: 500;
       color: var(--c-dark);
+      &:hover {
+        color: var(--c-primary);
+      }
       &::after {
         position: absolute;
         content: "";

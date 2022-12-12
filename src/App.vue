@@ -239,6 +239,10 @@ h2 {
   border: none;
   background-color: transparent;
   display: flex;
+  transition: all 0.4s;
+    &:hover {
+      transform: scale(1.1);
+    }
 }
 
 .btn {
@@ -249,6 +253,7 @@ h2 {
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 2.4rem;
+  transition: all 0.4s;
   @media screen and (max-width: 1220px) {
     width: 100%;
   }
@@ -256,11 +261,17 @@ h2 {
     border: 1px solid var(--c-primary);
     background-color: var(--c-primary);
     color: var(--c-light);
+    &:hover {
+      opacity: 0.8;
+    }
   }
   &--secondary {
     border: 1px solid var(--c-light-gray-border);
     background-color: var(--c-light);
     color: var(--c-primary);
+    &:hover {
+      border: 1px solid var(--c-primary);
+    }
   }
 }
 

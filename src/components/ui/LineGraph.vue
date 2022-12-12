@@ -94,6 +94,16 @@ export default {
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.2rem;
+    transition: all 0.4s;
+    animation: flying 1s ease-in-out infinite alternate;
+    @keyframes flying {
+      0%{
+        transform: translateY(0);
+      }
+      100%{
+        transform: translateY(4px);
+      }
+    }
     &::before {
       content: "";
       position: absolute;
