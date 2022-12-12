@@ -133,9 +133,48 @@
       <button class="btn btn--primary">Buy</button>
     </div>
   </div>
+
+  <div class="el" id="el">
+    
+  </div>
+
 </template>
 
 <script>
+// api test
+fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {
+  headers: {
+    "Content-Type": "application/json",
+    "X-CMC_PRO_API_KEY": "6ab9e990-4d93-41e4-8f57-fea0aaa28027",
+  },
+})
+  .then((res) => {
+    return res.json();
+  })
+  .then((res) => {
+    const { data } = res;
+    console.log(data);
+
+    data.forEach((el) => {
+      const html = `
+      <div class="el__icon-wrapper">
+        <p class="el__text"><b>${el.slug}</b></p>
+      </div>
+      <div class="el__info-box">
+        <h4 class="el__title">${el.symbol}</h4>
+        <p class="el__text"><b>${el.name}</b></p>
+      </div>
+      <div class="el__buttons buttons">
+        <button class="btn btn--secondary">Sell</button>
+        <button class="btn btn--primary">Buy</button>
+      </div>
+      `;
+
+      document.querySelector("#el").innerHTML += html;
+    });
+  })
+
+  .catch((error) => console.log("error: ", error));
 import ArrowSmall from "../icons/ArrowSmall.vue";
 import Bitcoin from "../icons/Bitcoin.vue";
 import Ethereum from "../icons/Ethereum.vue";
@@ -158,7 +197,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .el {
   display: grid;
   grid-template-columns: 4.8rem 13rem 16.7rem 17.4rem 1fr 12.2rem;
@@ -178,8 +217,8 @@ export default {
     display: grid;
     place-content: center;
     @media screen and (max-width: 1220px) {
-    border-radius: var(--round-small);
-  }
+      border-radius: var(--round-small);
+    }
   }
   &__title {
     font-weight: 400;
