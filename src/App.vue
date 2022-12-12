@@ -88,6 +88,9 @@ export default {
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
+  @media screen and (max-width: 500px) {
+    font-size: 60.5%;
+  }
 }
 
 *,
@@ -108,27 +111,58 @@ body {
   font-family: var(--f-regular);
   position: relative;
   padding: 2rem;
+  @media screen and (max-width: 1220px) {
+    padding: 1rem;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 0.2rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: var(--c-primary);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--c-secondary);
 }
 
 .dashboard {
-  background-color: var(--c-light-gray-bg); //temporary
+  background-color: var(--c-light);
   max-width: 144rem;
   height: 90rem;
   border-radius: var(--round-large);
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 1220px) {
+    height: 100%;
+    max-width: 50rem;
+  }
   &__wrapper {
     max-width: 117.6rem;
     height: 100%;
     background-color: var(--c-light);
     margin: 0 0 0 auto;
     padding: 4.9rem 6.8rem 0;
+    @media screen and (max-width: 1220px) {
+      padding: 3.2rem 1rem;
+    }
+    @media screen and (max-width: 500px) {
+      padding: 2.2rem 1rem;
+    }
   }
   &__sections {
     display: grid;
     grid-gap: 3.2rem;
     grid-template-columns: 50.9rem 49.9rem;
+    @media screen and (max-width: 1220px) {
+      grid-template-columns: 100%;
+    }
+    @media screen and (max-width: 500px) {
+      grid-gap: 2.2rem;
+    }
   }
   &__blur-box {
     position: absolute;
@@ -140,12 +174,33 @@ body {
     // right: 8.8rem; //figma mistake?
     right: 6.8rem; //better
     z-index: 99;
+    @media screen and (max-width: 1220px) {
+      display: none;
+    }
   }
 }
 
-.grid--3 {
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
+.grid {
+  &--1 {
+    @media screen and (max-width: 1220px) {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+  }
+  &--2 {
+    @media screen and (max-width: 1220px) {
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+    }
+  }
+  &--3 {
+    @media screen and (max-width: 1220px) {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+    }
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
 }
 
 // global
@@ -194,7 +249,9 @@ h2 {
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 2.4rem;
-  margin-right: 0.8rem;
+  @media screen and (max-width: 1220px) {
+    width: 100%;
+  }
   &--primary {
     border: 1px solid var(--c-primary);
     background-color: var(--c-primary);
@@ -205,5 +262,10 @@ h2 {
     background-color: var(--c-light);
     color: var(--c-primary);
   }
+}
+
+.buttons {
+  display: flex;
+  gap: 0.8rem;
 }
 </style>

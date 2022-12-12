@@ -20,6 +20,7 @@
 
 <style lang="scss" scoped>
 .list {
+  flex-wrap: wrap;
   gap: 2.4rem;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid var(--c-light-gray-border);

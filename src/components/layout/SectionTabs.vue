@@ -24,10 +24,24 @@ export default {
   width: 100%;
   height: 50.4rem;
   position: relative;
+  overflow: hidden;
+  @media screen and (max-width: 1220px) {
+    height: 100%;
+    padding: 2.2rem 0 2.2rem 2.2rem;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 1.2rem 0 1.2rem 1.2rem;
+  }
   &__elements {
     display: grid;
     grid-gap: 0.8rem;
     padding: 3.2rem 3.2rem 0 0;
+    @media screen and (max-width: 1220px) {
+      padding: 2.2rem 2.2rem 0 0;
+    }
+    @media screen and (max-width: 500px) {
+      padding: 1.2rem 1.2rem 0 0;
+    }
   }
 }
 </style>

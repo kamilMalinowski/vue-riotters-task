@@ -13,7 +13,7 @@
       </div>
       <p class="balance__text">12% vs last month</p>
     </div>
-    <div class="base-wrapper">
+    <div class="base-wrapper buttons">
       <button class="btn btn--primary">Quick Invest</button>
       <button class="btn btn--secondary">Show Report</button>
     </div>
@@ -23,6 +23,12 @@
 <style lang="scss" scoped>
 .balance {
   padding: 3.2rem;
+  @media screen and (max-width: 1220px) {
+    padding: 2.2rem;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 1.2rem;
+  }
   &__text-box {
     padding-bottom: 7.2rem;
   }

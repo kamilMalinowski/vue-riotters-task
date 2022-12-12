@@ -10,7 +10,7 @@
       />
       <search-icon class="header__search-icon"></search-icon>
     </base-card>
-    <span></span>
+    <span class="no-mobile"></span>
     <base-card class="round-small">
       <button class="header__btn">
         <span class="header__info-dot"></span>
@@ -51,6 +51,10 @@ export default {
   grid-template-columns: 23.2rem 1fr 4.8rem 4.8rem;
   grid-gap: 1.6rem;
   margin-bottom: 3.2rem;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr 4.8rem 4.8rem;
+    margin-bottom: 2.2rem;
+  }
   &__search-input {
     @include buttonsSize;
     border-radius: var(--round-small);
@@ -59,8 +63,8 @@ export default {
     font-size: 1.4rem;
     line-height: 2.4rem;
     color: var(--c-gray);
-    &::placeholder{
-        color: var(--c-gray);
+    &::placeholder {
+      color: var(--c-gray);
     }
     &:focus {
       outline-color: var(--c-light-gray-border);
@@ -98,6 +102,11 @@ export default {
   &__hamburger-icon {
     width: 1.4rem;
     height: 1.4rem;
+  }
+}
+.no-mobile {
+  @media screen and (max-width: 500px) {
+    display: none;
   }
 }
 </style>

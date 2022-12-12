@@ -35,8 +35,15 @@ export default {
 
 <style lang="scss" scoped>
 .summary {
+  overflow: hidden;
   &__wrapper {
     padding: 3.2rem 3.2rem 0;
+    @media screen and (max-width: 1220px) {
+      padding: 2.2rem 2.2rem 0;
+    }
+    @media screen and (max-width: 500px) {
+      padding: 1.2rem 1.2rem 0;
+    }
   }
   &__text-box {
     padding: 1.5rem 2.4rem 1.7rem;

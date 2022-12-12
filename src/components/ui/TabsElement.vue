@@ -20,7 +20,7 @@
       </p>
     </div>
     <line-small class=""></line-small>
-    <div class="el__buttons">
+    <div class="el__buttons buttons">
       <button class="btn btn--secondary">Sell</button>
       <button class="btn btn--primary">Buy</button>
     </div>
@@ -47,7 +47,7 @@
       </p>
     </div>
     <line-small-decrease class=""></line-small-decrease>
-    <div class="el__buttons">
+    <div class="el__buttons buttons">
       <button class="btn btn--secondary">Sell</button>
       <button class="btn btn--primary">Buy</button>
     </div>
@@ -74,7 +74,7 @@
       </p>
     </div>
     <line-small class="mirror2"></line-small>
-    <div class="el__buttons">
+    <div class="el__buttons buttons">
       <button class="btn btn--secondary">Sell</button>
       <button class="btn btn--primary">Buy</button>
     </div>
@@ -101,7 +101,7 @@
       </p>
     </div>
     <line-small class="mirror"></line-small>
-    <div class="el__buttons">
+    <div class="el__buttons buttons">
       <button class="btn btn--secondary">Sell</button>
       <button class="btn btn--primary">Buy</button>
     </div>
@@ -128,7 +128,7 @@
       </p>
     </div>
     <line-small class="mirror"></line-small>
-    <div class="el__buttons">
+    <div class="el__buttons buttons">
       <button class="btn btn--secondary">Sell</button>
       <button class="btn btn--primary">Buy</button>
     </div>
@@ -168,12 +168,18 @@ export default {
   border-radius: var(--round-small);
   border: 1px solid var(--c-light-gray-border);
   padding: 1.6rem 2rem;
+  @media screen and (max-width: 1220px) {
+    grid-template-columns: 1fr;
+  }
   &__icon-wrapper {
     padding: 0.8rem;
     border: 1px solid var(--c-light-gray-border);
     border-radius: 100%;
     display: grid;
     place-content: center;
+    @media screen and (max-width: 1220px) {
+    border-radius: var(--round-small);
+  }
   }
   &__title {
     font-weight: 400;
@@ -187,7 +193,7 @@ export default {
     gap: 0.6rem;
     font-size: 1.4rem;
     line-height: 1.4rem;
-    b{
+    b {
       font-weight: 600;
     }
     &--increase {
@@ -214,6 +220,9 @@ export default {
   }
   &__buttons {
     display: flex;
+  }
+  &__buttons .btn--primary {
+    margin-right: 0;
   }
 }
 
