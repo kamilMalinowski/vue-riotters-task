@@ -134,14 +134,12 @@
     </div>
   </div>
 
-  <div class="el" id="el">
-    
-  </div>
-
+  <div class="el" id="el"></div>
 </template>
 
 <script>
 // api test
+// chrome extension => Allow CORS: Access-Control-Allow-Origin
 fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {
   headers: {
     "Content-Type": "application/json",
@@ -175,6 +173,7 @@ fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {
   })
 
   .catch((error) => console.log("error: ", error));
+  
 import ArrowSmall from "../icons/ArrowSmall.vue";
 import Bitcoin from "../icons/Bitcoin.vue";
 import Ethereum from "../icons/Ethereum.vue";
@@ -197,7 +196,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .el {
   display: grid;
   grid-template-columns: 4.8rem 13rem 16.7rem 17.4rem 1fr 12.2rem;
